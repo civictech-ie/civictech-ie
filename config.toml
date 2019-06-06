@@ -1,0 +1,4 @@
+baseURL = "https://www.civictech.ie"
+languageCode = "en-ie"
+title = "Civic Tech Ireland"
+theme = "civictech"
