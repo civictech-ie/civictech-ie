@@ -6,6 +6,16 @@
   --brand: #080AE3;
 }
 
+::-moz-selection {
+  background-color: var(--faint);
+  color: var(--black);
+}
+
+::selection {
+  background-color: var(--faint);
+  color: var(--black);
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
