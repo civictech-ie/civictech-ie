@@ -6,9 +6,9 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
     {{ $resetStyle := resources.Get "reset.css" | minify | fingerprint }}
-    {{ $civictechStyle := resources.Get "civictech.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $resetStyle.RelPermalink }}">
-    <link rel="stylesheet" href="{{ $civictechStyle.RelPermalink }}">
+    {{ $civictechStyle := resources.Get "sass/civictech.sass" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $civictechStyle.Permalink }}" integrity="{{ $civictechStyle.Data.Integrity }}" media="screen">
     <title>civic tech · ireland</title>
   </head>
   <body>
