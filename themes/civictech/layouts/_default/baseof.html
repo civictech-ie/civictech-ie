@@ -5,15 +5,13 @@
     <meta content="ie=edge" http-equiv="x-ua-compatible"/>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
-    {{ $resetStyle := resources.Get "reset.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $resetStyle.RelPermalink }}">
-    {{ $civictechStyle := resources.Get "sass/civictech.sass" | toCSS | minify | fingerprint }}
+    {{ $civictechStyle := resources.Get "sass/civictech.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $civictechStyle.Permalink }}" integrity="{{ $civictechStyle.Data.Integrity }}" media="screen">
     <title>civic tech · ireland</title>
   </head>
   <body>
     <main aria-role="main">
-    {{- block "main" . }}{{- end }}
+      {{- block "main" . }}{{- end }}
     </main>
   </body>
 </html>

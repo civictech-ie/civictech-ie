@@ -1,0 +1,124 @@
+// reset
+
+@viewport {
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+@-ms-viewport {
+  width: extend-to-zoom;
+  zoom: 1.0;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, font, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+  background: transparent;
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-backface-visibility: visible;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// fonts
+
+@font-face {
+  font-family: "c-mono";
+  src: url('https://d2jelilm07lhuq.cloudfront.net/typefaces/c-mono-400.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}
+
+// styles
+
+html {
+  font-size: 9px;
+  --accent: #ff0000;
+  --background: #fafafa;
+  --ink: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --accent: #ff0000;
+    --background: #000;
+    --ink: #fafafa;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--ink);
+  font-size: 1.8rem;
+  line-height: 2.43rem;
+  font-family: "c-mono", serif;
+}
+
+::selection {
+  color: var(--accent); 
+  background: #eee;
+}
+
+h1, .logo {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+main {
+  max-width: 56rem;
+  padding: 2rem;
+
+  a, a:link, a:visited {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    text-decoration: none;
+    &:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+  }
+
+  code {
+    background-color: #eee;
+    border-radius: 0.25rem;
+    &:before, &:after {
+      content: "`";
+    }
+  }
+
+  p + p {
+    text-indent: 8rem;
+  }
+
+  p.salutation {
+    text-indent: 0;
+    margin: 2rem;
+    padding-left: 8rem;
+  }
+}
